@@ -1,7 +1,12 @@
 const uuidv1 = require("uuid/v4");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-mongoose.connect("mongodb://localhost:5000/test2", { useNewUrlParser: true });
+const config = require("config");
+const host = config.get("Database.host");
+const port = config.get("Database.port");
+const user = config.get("Database.user");
+const password = config.get("Database.password")
+mongoose.connect(`mongodb://${host}:${port}/alert`, { useNewUrlParser: true, user: user, pass: password });
 
 //Get the default connection
 var db = mongoose.connection;
@@ -21,10 +26,10 @@ const alertSchema = new Schema({
 var Alert = mongoose.model("Alert", alertSchema);
 
 const add = (alertData, callback) => {
-  const alert = new Alert({id:uuidv1(), ...alertData});
-  console.log(alertData)
+  const alert = new Alert({ id: uuidv1(), ...alertData });
+  console.log(alertData);
   alert.save((err, alert) => {
-   // console.log(err)
+    // console.log(err)
     callback(err);
   });
 };
@@ -34,8 +39,8 @@ const get = (id, callback) => {
 };
 
 const search = (obj, callback) => {
-  console.log("in search")
-  Alert.find(obj,callback);
+  console.log("in search");
+  Alert.find(obj, callback);
 };
 
 const remove = (id, callback) => {

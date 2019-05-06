@@ -1,0 +1,20 @@
+# Projet JXT
+
+Authorization token: eyJhbGciOiJIUzI1NiJ9.cm9zZQ.vEvuighmzkYQEtjq0tmPfqb6W3QqaC7wQCJll15lCWE
+
+## Lancer le serveur
+Après avoir cloner ce projet lancer
+```console
+npm install
+npm start
+```
+
+Il est possible de changer les port du serveur et de la base de donnée, ainsi que les identifiants de la base de donnée, dans le fichier config/default.json.
+
+Requête pour créer une alert:
+```console
+ curl -i -X POST -H 'Content-Type: application/json' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cm9zZQ.vEvuighmzkYQEtjq0tmPfqb6W3QqaC7wQCJll15lCWE' -d '{"type":"tes", "label":"l", "status":"s", "from":"f", "to":"t"}' http://localhost:3000/v1/alerts
+ ```
+ Reqête pour chercher une alerte par rapport à ses éléments:
+ ```console
+ curl -i -X GET  -H 'Content-Type: application/json' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cm9zZQ.vEvuighmzkYQEtjq0tmPfqb6W3QqaC7wQCJll15lCWE' -d '{"label": "l"}' http://localhost:3000/v1/alerts/search
