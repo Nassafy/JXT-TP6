@@ -25,6 +25,7 @@ curl -i -X DELETE  -H 'Content-Type: application/json' -H 'Authorization: Bearer
 ```
 
  Requête pour le patch:
- ```curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cm9zZQ.vEvuighmzkYQEtjq0tmPfqb6W3Qqa
+ ```console
+curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cm9zZQ.vEvuighmzkYQEtjq0tmPfqb6W3Qqa
 C7wQCJll15lCWE' -d '{"type":"testpatch", "label":"l", "status":"s", "from":"f", "to":"t"}' http://localhost:3000/v1/alerts/id
 ```
