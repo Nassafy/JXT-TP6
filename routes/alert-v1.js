@@ -36,7 +36,7 @@ router.get("/:id", (req, res, next) => {
 });
 
 router.patch("/:id", (req, res, next) => {
-  alert.update(req.params.id, req.body, (err, raw) => {
+  alerts.update(req.params.id, req.body, (err, raw) => {
     if (err) {
       res.status(404).json({ message: "invalid input" });
     } else {
@@ -46,7 +46,7 @@ router.patch("/:id", (req, res, next) => {
 });
 
 router.delete("/:id", (req, res, next) => {
-  alert.remove(req.params.id, err => {
+  alerts.remove(req.params.id, err => {
     if (err) {
       res.status(404).json({ message: "invalid id" });
     } else {
