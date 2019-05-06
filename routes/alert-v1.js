@@ -15,7 +15,6 @@ router.post("/", (req, res, next) => {
 
 
 router.get("/search", (req, res, next) => {
-  console.log(`body: ${req.body}`)
   alerts.search(req.body, (err, alerts) => {
     if (err) {
       res.status(404).json({ message: "invalid tag value" });

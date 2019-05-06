@@ -38,8 +38,7 @@ const get = (id, callback) => {
   Alert.find({ id: id }, callback);
 };
 
-const search = (obj, callback) => {
-  console.log("in search");
+const search = (status, callback) => {
   Alert.find(obj, callback);
 };
 
