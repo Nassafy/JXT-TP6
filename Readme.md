@@ -3,13 +3,13 @@
 Authorization token: eyJhbGciOiJIUzI1NiJ9.cm9zZQ.vEvuighmzkYQEtjq0tmPfqb6W3QqaC7wQCJll15lCWE
 
 ## Lancer le serveur
-Après avoir cloner ce projet lancer
+Après avoir cloner ce projet utiliser les commandes suivantes pour le lancer:
 ```console
 npm install
 npm start
 ```
 
-Il est possible de changer les port du serveur et de la base de donnée, ainsi que les identifiants de la base de donnée, dans le fichier config/default.json.
+Il est possible de changer les ports du serveur et de la base de donnée, ainsi que les identifiants de la base de donnée, dans le fichier config/default.json.
 
 Requête pour créer une alert:
 ```console
