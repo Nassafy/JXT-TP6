@@ -30,3 +30,11 @@ curl -i -X DELETE  -H 'Content-Type: application/json' -H 'Authorization: Bearer
 curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cm9zZQ.vEvuighmzkYQEtjq0tmPfqb6W3Qqa
 C7wQCJll15lCWE' -d '{"type":"testpatch", "label":"l", "status":"s", "from":"f", "to":"t"}' http://localhost:3000/v1/alerts/id
 ```
+
+## Lancer les tests
+Les tests nécessite une base de donnée mongodb, les informations concernant cette base peuvent être spécifier dans le fichier config/default.json.
+
+Ensuite effectuer la commande:
+```console
+npm test
+```
