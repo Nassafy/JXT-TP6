@@ -29,8 +29,6 @@ app.use(verifyacess);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(bodyParser.json());
-
 // Activation de Helmet
 app.use(helmet({ noSniff: true }));
 

@@ -39,7 +39,7 @@ const get = (id, callback) => {
 };
 
 const search = (status, callback) => {
-  Alert.find(obj, callback);
+  Alert.find(status, callback);
 };
 
 const remove = (id, callback) => {
