@@ -5,8 +5,12 @@ const config = require("config");
 const host = config.get("Database.host");
 const port = config.get("Database.port");
 const user = config.get("Database.user");
-const password = config.get("Database.password")
-mongoose.connect(`mongodb://${host}:${port}/alert`, { useNewUrlParser: true, user: user, pass: password });
+const password = config.get("Database.password");
+mongoose.connect(`mongodb://${host}:${port}/alert`, {
+  useNewUrlParser: true,
+  user: user,
+  pass: password
+});
 
 //Get the default connection
 var db = mongoose.connection;
@@ -27,10 +31,9 @@ var Alert = mongoose.model("Alert", alertSchema);
 
 const add = (alertData, callback) => {
   const alert = new Alert({ id: uuidv1(), ...alertData });
-  console.log(alertData);
   alert.save((err, alert) => {
     // console.log(err)
-    callback(err);
+    callback(err, alert);
   });
 };
 

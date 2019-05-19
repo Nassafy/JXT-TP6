@@ -25,7 +25,7 @@ describe("Alert tests", () => {
         res.should.have.status(200);
         chai
           .request(app)
-          .get("/v1/alerts/3")
+          .get(`/v1/alerts/${res.body.alert.id}`)
           .set("Authorization", `Bearer ${token}`)
           .end((err, res) => {
             res.should.have.status(200);
@@ -80,5 +80,4 @@ describe("Alert tests", () => {
           });
       });
   });
-
 });
